@@ -22,6 +22,8 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 
+
+
 public class LaunchBrowser {
 	static WebDriver driver;
 	
@@ -58,6 +60,7 @@ public class LaunchBrowser {
      		driver=new ChromeDriver(chromeOptions);
      		System.out.println("Chrome browser is launched");
      		log.update("******Chrome browser Successfully Launched******");
+     		//ExtentCucumberAdapter.addTestStepLog(strExecutionPlatform + " Driver Creation Completed");
              break;
          case "LOCAL_FIREFOX":
         	 System.setProperty("webdriver.gecko.driver",path2);
@@ -77,14 +80,15 @@ public class LaunchBrowser {
              break;
          case "GRID_FIREFOX":
              driver = new RemoteWebDriver(new URL("http://localhost:4444/wd/hub"), DesiredCapabilities.firefox());
-                         break;
-         
+         //    ExtentCucumberAdapter.addTestStepLog(strExecutionPlatform + " Driver Creation Completed");    
+             break;
+ 
+	
      }
-	
-	
 	
 	driver.get(configProp.getProperty("url"));
 		driver.manage().window().maximize();
 		return driver;
-	}
+	
+}
 }
