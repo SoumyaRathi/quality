@@ -73,7 +73,7 @@ public class EmployeeDetails_Page {
 			log.update("******Employee Details(Email) is updated******");
 			}
 		
-		//clicking on logout button
+		//click on logout button
 		public void clickonLogout() {
 			WebElement logout=driverWait.clickable(btnLogout,40);     
 			logout.click();
